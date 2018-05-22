@@ -75,6 +75,11 @@ SECTIONS
         *(.after_vectors .after_vectors.*)	/* Startup code and ISR */
 
     } >FLASH
+    
+    .firmware_metadata : ALIGN(4)
+    {
+    	KEEP(*(.firmware_metadata))
+    } >FLASH
 
     .inits : ALIGN(4)
     {

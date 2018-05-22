@@ -31,6 +31,7 @@
 #include "diag/Trace.h"
 
 #include "rtos.h"
+#include "firmware_metadata.h"
 
 // ----------------------------------------------------------------------------
 //
@@ -57,6 +58,7 @@ int main(int argc, char* argv[])
 	// At this stage the system clock should have already been configured
 	// at high speed.
 
+	trace_printf("Firmware Version: %d.%d.%d\n", fw_meta.major, fw_meta.minor, fw_meta.rev);
 	trace_printf("Starting FreeRTOS...\n");
 
 	RTOS_Init();
